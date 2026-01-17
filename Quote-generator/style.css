@@ -1,0 +1,102 @@
+/* Simple, centered styling with a pleasant font */
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #5b6cff;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Merriweather", Georgia, serif;
+  background: linear-gradient(180deg, var(--bg), #e70808);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1.5rem;
+  padding:2rem;
+  text-align:center;
+}
+
+.title{
+  margin:0;
+  font-weight:700;
+  font-size:1.6rem;
+  color:var(--accent);
+  letter-spacing:0.02em;
+}
+
+.quote-card{
+  width:min(720px, 92vw);
+  background:var(--card);
+  border-radius:12px;
+  padding:1.6rem;
+  box-shadow: 0 8px 20px rgba(33,41,80,0.06);
+  transition:transform .14s ease, box-shadow .14s ease;
+}
+
+.quote-card:focus-within,
+.quote-card:hover{
+  transform:translateY(-4px);
+  box-shadow: 0 12px 30px rgba(33,41,80,0.08);
+}
+
+.quote{
+  margin:0 0 .8rem 0;
+  font-size:1.15rem;
+  line-height:1.5;
+  color:var(--text);
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .3s ease, transform .3s ease;
+  font-weight:400;
+}
+
+.quote.show{
+  opacity:1;
+  transform:none;
+}
+
+.author{
+  display:block;
+  font-size:.95rem;
+  color:var(--muted);
+  font-style:normal;
+  text-align:right;
+  margin-top:.4rem;
+}
+
+/* Button */
+.btn{
+  border:0;
+  background:linear-gradient(90deg, var(--accent), #7c86ff);
+  color:white;
+  padding:.75rem 1.2rem;
+  border-radius:10px;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow: 0 8px 18px rgba(245, 5, 193, 0.18);
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.btn:active{transform:translateY(1px)}
+.btn:focus{outline:3px solid rgba(91,108,255,0.14)}
+.btn:hover{opacity:.98}
+
+/* Footer */
+.footer{
+  margin-top:0.25rem;
+  color:var(--muted);
+  font-size:.875rem;
+}
